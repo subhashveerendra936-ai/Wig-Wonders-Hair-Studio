@@ -1,478 +1,1336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wig Wonders | Hair Replacement Studio Hyderabad</title>
-
-<meta name="description" content="Premium Hair Patch, Hair Systems, Hair Wigs and Non Surgical Hair Replacement in Hyderabad.">
+<title>Wigs Wonders Hair Studio | Non-Surgical Hair Replacement Hyderabad</title>
+<meta name="description" content="Wigs Wonders Hair Studio — Premium Hair Patches, Hair Systems & Non-Surgical Hair Replacement in Secunderabad & Kukatpally, Hyderabad. 12+ Years Experience. Call Naresh: +91-73965-56106">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ─── RESET & ROOT ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+:root {
+  --gold:        #c9a84c;
+  --gold-light:  #e8c97a;
+  --gold-dark:   #7a5c1a;
+  --bg:          #080808;
+  --bg2:         #0e0e0e;
+  --bg3:         #161616;
+  --bg4:         #1c1c1c;
+  --text:        #e6ddd0;
+  --muted:       #7a746c;
+  --white:       #ffffff;
+  --radius:      16px;
+  --radius-sm:   10px;
 }
 
-html{
-scroll-behavior:smooth;
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.7;
 }
 
-body{
-
-background:#090909;
-color:white;
-
+/* subtle grain */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none; opacity: .4;
 }
 
-nav{
+.container { width: 92%; max-width: 1180px; margin: auto; position: relative; z-index: 1; }
 
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* ─── SHARED TYPOGRAPHY ─── */
+.eyebrow {
+  display: block;
+  font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-weight: 400; line-height: 1.1; color: var(--white);
+  margin-bottom: 18px;
+}
+.sec-title em { font-style: italic; color: var(--gold); }
+.sec-divider {
+  width: 52px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 22px;
+}
+.sec-divider.center { margin: 0 auto 22px; }
 
-background:#000;
+/* ─── NAV ─── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s;
+  background: linear-gradient(to bottom, rgba(8,8,8,.95), transparent);
+}
+#nav.scrolled {
+  background: rgba(8,8,8,.97);
+  border-bottom: 1px solid rgba(201,168,76,.1);
+  padding: 14px 5%;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 600; color: var(--gold);
+  text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--text); font-style: italic; font-weight: 300; }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+  transition: color .3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-wa {
+  padding: 9px 22px; border-radius: 40px;
+  border: 1px solid var(--gold); color: var(--gold);
+  text-decoration: none; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+  transition: all .3s;
+}
+.nav-wa:hover { background: var(--gold); color: #000; }
 
-z-index:999;
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 140px 5% 80px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 45%, rgba(201,168,76,.09) 0%, transparent 70%),
+    url('media/studio_outside.jpg') center/cover no-repeat;
+  filter: brightness(.18) saturate(.5);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 20px; border-radius: 40px;
+  border: 1px solid rgba(201,168,76,.35);
+  background: rgba(201,168,76,.06);
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 28px;
+  animation: fadeUp .8s ease both;
+}
+.hero-badge::before { content: '✦'; font-size: .55rem; }
 
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  font-weight: 300; line-height: 1.05; color: var(--white);
+  margin-bottom: 22px;
+  animation: fadeUp .9s .1s ease both;
+}
+.hero-h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+.hero-sub {
+  font-size: clamp(.9rem, 1.5vw, 1.1rem); color: var(--muted);
+  max-width: 560px; margin: 0 auto 46px; font-weight: 300;
+  animation: fadeUp 1s .2s ease both;
+}
+.hero-btns {
+  display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 1s .3s ease both;
+}
+.btn-gold {
+  display: inline-block; padding: 15px 38px; border-radius: 40px;
+  background: var(--gold); color: #000;
+  font-family: 'DM Sans', sans-serif; font-weight: 700;
+  font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all .3s;
+  box-shadow: 0 0 36px rgba(201,168,76,.28);
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 0 56px rgba(201,168,76,.5); }
+.btn-ghost {
+  display: inline-block; padding: 14px 34px; border-radius: 40px;
+  border: 1px solid rgba(255,255,255,.22); color: var(--white);
+  font-size: .82rem; letter-spacing: .05em; text-decoration: none;
+  transition: all .3s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats {
+  display: flex; gap: 50px; justify-content: center; flex-wrap: wrap;
+  margin-top: 76px;
+  animation: fadeUp 1s .5s ease both;
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 600; color: var(--gold); line-height: 1;
+}
+.stat-l { font-size: .72rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+
+.scroll-hint {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--muted); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+  animation: fadeUp 1s .7s ease both;
+}
+.scroll-line {
+  width: 1px; height: 38px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2.2s ease-in-out infinite;
 }
 
-.logo{
+/* ─── MARQUEE ─── */
+.marquee-bar {
+  background: var(--gold); padding: 13px 0; overflow: hidden;
+  border-top: 1px solid var(--gold-dark); border-bottom: 1px solid var(--gold-dark);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+.marquee-item {
+  white-space: nowrap; color: #000;
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  padding: 0 28px;
+}
+.marquee-item::after { content: ' ✦ '; }
 
-font-size:32px;
-font-weight:700;
-color:#d4af37;
+/* ─── ABOUT ─── */
+#about { padding: 110px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.about-img-frame { position: relative; }
+.about-img-frame img {
+  width: 100%; border-radius: var(--radius);
+  display: block; object-fit: cover;
+  filter: contrast(1.05) saturate(.92);
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.about-corner {
+  position: absolute; bottom: -18px; right: -18px;
+  width: 140px; height: 140px; border: 1px solid var(--gold);
+  border-radius: var(--radius); z-index: -1; opacity: .35;
+}
+.about-tag {
+  position: absolute; top: 20px; left: 20px;
+  background: var(--gold); color: #000;
+  padding: 8px 16px; border-radius: 30px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+}
+.about-text p { color: var(--muted); margin-bottom: 18px; font-size: .92rem; }
+.perks { display: flex; flex-direction: column; gap: 12px; margin: 26px 0; }
+.perk {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px; background: var(--bg3); border-radius: var(--radius-sm);
+  border-left: 2px solid var(--gold);
+}
+.perk-icon { font-size: 1.1rem; flex-shrink: 0; }
+.perk-body strong { display: block; color: var(--text); font-size: .88rem; margin-bottom: 2px; }
+.perk-body span { color: var(--muted); font-size: .8rem; }
 
+/* ─── TEAM ─── */
+#team { padding: 100px 0; background: var(--bg2); text-align: center; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 50px; }
+.team-card {
+  background: var(--bg3); border: 1px solid rgba(201,168,76,.1);
+  border-radius: var(--radius); overflow: hidden; transition: all .4s; position: relative;
+}
+.team-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+.team-img-wrap { position: relative; overflow: hidden; }
+.team-img-wrap img {
+  width: 100%; height: 320px; object-fit: cover; object-position: top center;
+  display: block; transition: transform .5s;
+  filter: saturate(.88) contrast(1.04);
+}
+.team-card:hover .team-img-wrap img { transform: scale(1.04); }
+.team-role-badge {
+  position: absolute; bottom: 14px; left: 14px;
+  background: var(--gold); color: #000;
+  font-size: .65rem; font-weight: 700; padding: 5px 12px;
+  border-radius: 20px; letter-spacing: .08em; text-transform: uppercase;
+}
+.team-info { padding: 22px 22px 26px; text-align: left; }
+.team-info h3 { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 6px; }
+.team-info p { color: var(--muted); font-size: .8rem; line-height: 1.6; }
+.team-exp {
+  display: inline-block; margin-top: 12px;
+  padding: 4px 12px; border-radius: 20px;
+  border: 1px solid rgba(201,168,76,.3); color: var(--gold);
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
 }
 
-.logo span{
-
-color:white;
-
+/* ─── SERVICES ─── */
+#services { padding: 100px 0; text-align: center; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 50px; text-align: left; }
+.service-card {
+  background: var(--bg3); border: 1px solid rgba(201,168,76,.1);
+  border-radius: var(--radius); padding: 34px 28px;
+  transition: all .4s; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,.06) 0%, transparent 55%);
+  opacity: 0; transition: opacity .4s;
+}
+.service-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-5px); box-shadow: 0 20px 55px rgba(0,0,0,.4); }
+.service-card:hover::before { opacity: 1; }
+.s-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300; color: rgba(201,168,76,.14);
+  line-height: 1; margin-bottom: 14px; transition: color .4s;
+}
+.service-card:hover .s-num { color: rgba(201,168,76,.28); }
+.service-card h3 { color: var(--gold-light); font-size: 1rem; margin-bottom: 9px; }
+.service-card p { color: var(--muted); font-size: .83rem; line-height: 1.65; }
+.s-tag {
+  display: inline-block; margin-top: 14px;
+  padding: 4px 12px; border-radius: 20px;
+  background: rgba(201,168,76,.1); color: var(--gold);
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
 }
 
-nav ul{
+/* ─── STUDIO GALLERY / VIDEO ─── */
+#studio { padding: 100px 0; background: var(--bg2); text-align: center; }
 
-display:flex;
-list-style:none;
+.studio-video-wrap {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  margin: 50px 0 60px; border: 1px solid rgba(201,168,76,.2);
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.studio-video-wrap video {
+  width: 100%; display: block; max-height: 520px; object-fit: cover;
+}
+.video-gold-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px 30px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.video-label { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--white); font-style: italic; }
+.video-sub { color: var(--gold-light); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
 
+/* Masonry-style grid */
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 12px;
+}
+.studio-tile {
+  border-radius: var(--radius-sm); overflow: hidden;
+  position: relative; cursor: zoom-in;
+  border: 1px solid rgba(201,168,76,.08);
+}
+.studio-tile img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s; display: block;
+  filter: saturate(.88) contrast(1.04);
+}
+.studio-tile:hover img { transform: scale(1.06); filter: saturate(1) contrast(1.06); }
+.studio-tile.wide { grid-column: span 2; }
+.studio-tile.tall { grid-row: span 2; }
+.studio-tile-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 50%);
+  opacity: 0; transition: opacity .4s;
+  display: flex; align-items: flex-end; padding: 14px;
+}
+.studio-tile:hover .studio-tile-overlay { opacity: 1; }
+.studio-tile-label { color: var(--gold-light); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+
+/* ─── HAIR PATCHES SHOWCASE ─── */
+#patches { padding: 100px 0; text-align: center; }
+.patches-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
+.patch-card {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid rgba(201,168,76,.12);
+  background: var(--bg3); transition: all .4s;
+  position: relative;
+}
+.patch-card:hover { border-color: rgba(201,168,76,.45); transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.patch-card img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform .5s; }
+.patch-card:hover img { transform: scale(1.04); }
+.patch-info { padding: 20px 22px; text-align: left; }
+.patch-info h4 { color: var(--gold-light); font-size: .95rem; margin-bottom: 6px; }
+.patch-info p { color: var(--muted); font-size: .8rem; }
+.patch-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(0,0,0,.7); border: 1px solid var(--gold);
+  color: var(--gold); padding: 4px 12px; border-radius: 20px;
+  font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
 }
 
-nav ul li{
+/* ─── BEFORE/AFTER WALL ─── */
+#results { padding: 100px 0; background: var(--bg2); }
+.results-header { text-align: center; margin-bottom: 54px; }
+.results-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
+.before-after-img {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid rgba(201,168,76,.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.before-after-img img { width: 100%; display: block; filter: saturate(.9); }
+.results-right { display: flex; flex-direction: column; gap: 20px; }
+.result-stat-card {
+  background: var(--bg3); border-radius: var(--radius-sm);
+  border: 1px solid rgba(201,168,76,.12); padding: 22px 24px;
+  display: flex; align-items: center; gap: 20px;
+  transition: border-color .4s;
+}
+.result-stat-card:hover { border-color: rgba(201,168,76,.35); }
+.rs-icon { font-size: 1.8rem; }
+.rs-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 600; color: var(--gold); line-height: 1;
+}
+.rs-label { color: var(--muted); font-size: .8rem; margin-top: 2px; }
+.youtube-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px;
+}
+.yt-card { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(201,168,76,.12); }
+.yt-card iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+.yt-label { padding: 10px 14px; background: var(--bg3); }
+.yt-label p { color: var(--muted); font-size: .75rem; }
 
-margin-left:35px;
+/* ─── PROCESS ─── */
+#process { padding: 100px 0; text-align: center; }
+.process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 60px; position: relative; }
+.process-row::before {
+  content: '';
+  position: absolute; top: 27px; left: 12%; right: 12%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dark), var(--gold-dark), transparent);
+}
+.process-step { text-align: center; padding: 0 18px; }
+.ps-circle {
+  width: 54px; height: 54px; border-radius: 50%;
+  border: 1px solid var(--gold); background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--gold);
+  box-shadow: 0 0 18px rgba(201,168,76,.18);
+}
+.process-step h4 { color: var(--text); font-size: .88rem; margin-bottom: 8px; }
+.process-step p { color: var(--muted); font-size: .78rem; }
 
+/* ─── BRANCHES ─── */
+#branches { padding: 100px 0; background: var(--bg2); }
+.branches-header { text-align: center; margin-bottom: 56px; }
+.branches-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.branch-card {
+  background: var(--bg3); border: 1px solid rgba(201,168,76,.12);
+  border-radius: var(--radius); overflow: hidden; transition: all .4s;
+}
+.branch-card:hover { border-color: rgba(201,168,76,.4); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.branch-img { position: relative; }
+.branch-img img { width: 100%; height: 220px; object-fit: cover; display: block; filter: saturate(.85); }
+.branch-flag {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--gold); color: #000;
+  padding: 6px 16px; border-radius: 30px;
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+}
+.branch-body { padding: 28px; }
+.branch-body h3 { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 16px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.4rem; }
+.branch-detail { display: flex; gap: 12px; margin-bottom: 14px; color: var(--muted); font-size: .85rem; align-items: flex-start; }
+.branch-detail span:first-child { font-size: 1rem; flex-shrink: 0; }
+.branch-wa {
+  display: inline-block; margin-top: 16px;
+  padding: 11px 26px; border-radius: 30px;
+  background: #25D366; color: #fff;
+  text-decoration: none; font-size: .8rem; font-weight: 600;
+  transition: all .3s;
+}
+.branch-wa:hover { background: #1ea855; box-shadow: 0 0 30px rgba(37,211,102,.4); }
+
+/* ─── REVIEWS ─── */
+#reviews { padding: 100px 0; text-align: center; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 50px; text-align: left; }
+.review-card {
+  background: var(--bg3); border: 1px solid rgba(201,168,76,.1);
+  border-radius: var(--radius); padding: 30px; transition: all .4s;
+}
+.review-card:hover { border-color: rgba(201,168,76,.32); transform: translateY(-4px); }
+.review-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; font-size: .88rem; }
+.review-quote {
+  color: var(--muted); font-size: .87rem; line-height: 1.75;
+  font-style: italic; margin-bottom: 20px; position: relative;
+}
+.review-quote::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; color: rgba(201,168,76,.25);
+  position: absolute; top: -8px; left: -4px; line-height: 1;
+}
+.review-quote p { padding-left: 18px; }
+.reviewer { display: flex; align-items: center; gap: 12px; }
+.r-avatar {
+  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .85rem; color: #000;
+}
+.r-name { font-weight: 600; font-size: .85rem; color: var(--text); }
+.r-loc { color: var(--muted); font-size: .75rem; }
+
+/* ─── CONTACT ─── */
+#contact { padding: 100px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 400; color: var(--white); margin-bottom: 24px; }
+.contact-left h2 em { font-style: italic; color: var(--gold); }
+.contact-left > p { color: var(--muted); margin-bottom: 32px; font-size: .9rem; }
+.c-detail {
+  display: flex; gap: 16px; margin-bottom: 18px;
+  padding: 18px 20px; background: var(--bg3); border-radius: var(--radius-sm);
+  border: 1px solid rgba(201,168,76,.1); align-items: flex-start;
+  transition: border-color .3s;
+}
+.c-detail:hover { border-color: rgba(201,168,76,.3); }
+.c-icon { font-size: 1.2rem; flex-shrink: 0; }
+.c-lbl { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.c-val { color: var(--text); font-size: .9rem; }
+.c-val a { color: var(--text); text-decoration: none; }
+.c-val a:hover { color: var(--gold); }
+.contact-form-box {
+  background: var(--bg3); border: 1px solid rgba(201,168,76,.12);
+  border-radius: var(--radius); padding: 40px;
+}
+.contact-form-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 400; color: var(--gold-light);
+  margin-bottom: 28px;
+}
+.fg { margin-bottom: 20px; }
+.fg label { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; background: var(--bg); border: 1px solid rgba(201,168,76,.15);
+  border-radius: var(--radius-sm); padding: 13px 16px;
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: .88rem;
+  outline: none; transition: border-color .3s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
+.fg textarea { resize: vertical; min-height: 96px; }
+.fg select option { background: var(--bg3); }
+.submit-btn {
+  width: 100%; padding: 15px; background: var(--gold); color: #000;
+  border: none; cursor: pointer; border-radius: 40px;
+  font-family: 'DM Sans', sans-serif; font-weight: 700;
+  font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+  transition: all .3s; margin-top: 6px;
+}
+.submit-btn:hover { background: var(--gold-light); box-shadow: 0 0 40px rgba(201,168,76,.4); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg); border-top: 1px solid rgba(201,168,76,.1);
+  padding: 44px 0 26px;
+}
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.f-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--gold); }
+.f-links { display: flex; gap: 26px; list-style: none; }
+.f-links a { color: var(--muted); font-size: .78rem; text-decoration: none; transition: color .3s; }
+.f-links a:hover { color: var(--gold); }
+.f-copy { color: var(--muted); font-size: .72rem; text-align: center; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.05); }
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 998;
+  display: flex; align-items: center; gap: 10px;
+  background: #25D366; color: #fff; text-decoration: none;
+  padding: 13px 22px; border-radius: 50px;
+  font-weight: 600; font-size: .84rem;
+  box-shadow: 0 8px 30px rgba(37,211,102,.38);
+  transition: all .3s;
+  animation: waBounce 3s 2s infinite;
+}
+.wa-float:hover { transform: scale(1.06); box-shadow: 0 12px 40px rgba(37,211,102,.55); }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+
+/* ─── LIGHTBOX ─── */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 90vh; border-radius: var(--radius); object-fit: contain; }
+#lb-close {
+  position: absolute; top: 20px; right: 28px;
+  color: var(--gold); font-size: 2rem; cursor: pointer; background: none; border: none;
 }
 
-nav ul li a{
-
-text-decoration:none;
-color:white;
-font-size:15px;
-transition:.3s;
-
+/* ─── KEYFRAMES ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .3; }
+}
+@keyframes waBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
 }
 
-nav ul li a:hover{
-
-color:#d4af37;
-
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .about-grid, .contact-grid, .results-layout, .branches-grid { grid-template-columns: 1fr; gap: 36px; }
+  .studio-grid { grid-template-columns: 1fr 1fr; }
+  .studio-tile.wide { grid-column: span 1; }
+  .studio-tile.tall { grid-row: span 1; }
+  .process-row { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .process-row::before { display: none; }
+  .patches-grid { grid-template-columns: 1fr; }
+  .youtube-row { grid-template-columns: 1fr; }
 }
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-padding:20px;
-
-background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
-
+@media (max-width: 540px) {
+  .studio-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 28px; }
+  .branches-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
 }
-
-.hero h1{
-
-font-size:65px;
-
-color:#d4af37;
-
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-max-width:700px;
-
-margin:auto;
-
-line-height:35px;
-
-color:#ddd;
-
-}
-
-.buttons{
-
-margin-top:40px;
-
-}
-
-.btn{
-
-display:inline-block;
-
-padding:15px 35px;
-
-background:#d4af37;
-
-color:black;
-
-text-decoration:none;
-
-border-radius:40px;
-
-font-weight:600;
-
-margin:10px;
-
-transition:.3s;
-
-}
-
-.btn:hover{
-
-transform:translateY(-5px);
-
-}
-
-section{
-
-padding:100px 8%;
-
-}
-
-.title{
-
-font-size:45px;
-
-text-align:center;
-
-margin-bottom:50px;
-
-color:#d4af37;
-
-}
-
-.about{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-align-items:center;
-
-}
-
-.image{
-
-height:450px;
-
-background:#222;
-
-border-radius:15px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:24px;
-
-color:#888;
-
-}
-
-.content h3{
-
-font-size:32px;
-
-margin-bottom:20px;
-
-}
-
-.content p{
-
-line-height:32px;
-
-font-size:17px;
-
-color:#ccc;
-
-}
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:50px;
-
-}
-
-.card{
-
-background:#161616;
-
-padding:35px;
-
-border-radius:15px;
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.card i{
-
-font-size:45px;
-
-color:#d4af37;
-
-margin-bottom:20px;
-
-}
-
-.card h4{
-
-margin-bottom:15px;
-
-font-size:24px;
-
-}
-
-.card p{
-
-color:#bbb;
-
-line-height:28px;
-
-}
-
-@media(max-width:768px){
-
-.about{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-nav ul{
-
-display:none;
-
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
 
-<nav>
-
-<div class="logo">
-
-Wig<span>Wonders</span>
-
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
 </div>
 
-<ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#gallery">Gallery</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Wigs <span>Wonders</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#studio">Studio</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#branches">Branches</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/917396556106" class="nav-wa">Book Now</a>
 </nav>
 
-<section class="hero">
-
-<div>
-
-<h1>Restore Your Hair.<br>Restore Your Confidence.</h1>
-
-<p>
-
-Hyderabad's Premium Non Surgical Hair Replacement Studio.
-
-Hair Patch • Hair Systems • Custom Wigs • Hair Styling
-
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn">
-
-Book Consultation
-
-</a>
-
-<a href="https://wa.me/917396556106" class="btn">
-
-WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div style="position:relative;z-index:2;width:100%">
+    <div class="hero-badge">Hyderabad's Trusted Hair Studio · Since 2013</div>
+    <h1 class="hero-h1">Restore Your Hair.<br><em>Reclaim Your Confidence.</em></h1>
+    <p class="hero-sub">Premium non-surgical hair replacement — crafted by brothers Naresh &amp; Raju with 12+ years of expertise. Natural. Undetectable. Life-changing.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">Book Free Consultation</a>
+      <a href="#studio" class="btn-ghost">See Our Studio ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">500<sup style="font-size:1.6rem;color:var(--gold-light)">+</sup></div>
+        <div class="stat-l">Happy Clients</div>
+      </div>
+      <div>
+        <div class="stat-n">12<sup style="font-size:1.6rem;color:var(--gold-light)">+</sup></div>
+        <div class="stat-l">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-n">2</div>
+        <div class="stat-l">Studio Branches</div>
+      </div>
+      <div>
+        <div class="stat-n">100<sup style="font-size:1.2rem;color:var(--gold-light)">%</sup></div>
+        <div class="stat-l">Natural Results</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Hair Patches</span>
+    <span class="marquee-item">Hair Systems</span>
+    <span class="marquee-item">Men's Wigs</span>
+    <span class="marquee-item">Women's Wigs</span>
+    <span class="marquee-item">Hair Extensions</span>
+    <span class="marquee-item">Hair Bonding</span>
+    <span class="marquee-item">Hair Weaving</span>
+    <span class="marquee-item">Non-Surgical Replacement</span>
+    <span class="marquee-item">Secunderabad</span>
+    <span class="marquee-item">Kukatpally</span>
+    <span class="marquee-item">Hair Patches</span>
+    <span class="marquee-item">Hair Systems</span>
+    <span class="marquee-item">Men's Wigs</span>
+    <span class="marquee-item">Women's Wigs</span>
+    <span class="marquee-item">Hair Extensions</span>
+    <span class="marquee-item">Hair Bonding</span>
+    <span class="marquee-item">Hair Weaving</span>
+    <span class="marquee-item">Non-Surgical Replacement</span>
+    <span class="marquee-item">Secunderabad</span>
+    <span class="marquee-item">Kukatpally</span>
+  </div>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
 <section id="about">
-
-<h2 class="title">
-
-About Wig Wonders
-
-</h2>
-
-<div class="about">
-
-<div class="image">
-
-YOUR HERO IMAGE
-
-</div>
-
-<div class="content">
-
-<h3>
-
-Trusted Hair Replacement Experts
-
-</h3>
-
-<p>
-
-Founded by Naresh with more than 12 years of experience, Wig Wonders provides premium non-surgical hair replacement, custom wigs, hair systems and professional styling.
-
-We manufacture our own wigs and provide natural-looking transformations with complete client satisfaction.
-
-</p>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-frame reveal">
+        <img src="media/naresh_founder.jpg" alt="Naresh — Founder, Wigs Wonders Hair Studio">
+        <div class="about-corner"></div>
+        <div class="about-tag">✦ Naresh — Founder</div>
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="sec-title">Two Brothers. One <em>Mission.</em><br>Restoring Lives Through Hair.</h2>
+        <div class="sec-divider"></div>
+        <p>Wigs Wonders Hair Studio was born from a deeply personal mission — helping people overcome the emotional burden of hair loss without surgery, without waiting, and without compromise.</p>
+        <p>Founders <strong style="color:var(--text)">Naresh</strong> and <strong style="color:var(--text)">Raju</strong> are brothers who have spent over 12 years perfecting the art of non-surgical hair replacement. Together, they guide every client personally — from the first consultation to the final styling — with patience, expertise, and genuine care.</p>
+        <p>Their philosophy: every person deserves to feel confident in their own hair.</p>
+        <div class="perks">
+          <div class="perk">
+            <span class="perk-icon">🏆</span>
+            <div class="perk-body">
+              <strong>12+ Years of Mastery</strong>
+              <span>Naresh's decade-long expertise is the foundation of every transformation at Wigs Wonders.</span>
+            </div>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">💎</span>
+            <div class="perk-body">
+              <strong>In-House Wig Crafting</strong>
+              <span>Unlike other studios, we craft our own wigs — ensuring unmatched quality and customisation.</span>
+            </div>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🤝</span>
+            <div class="perk-body">
+              <strong>Guided with Generosity</strong>
+              <span>Both brothers personally guide every client with warmth, honesty, and complete transparency.</span>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-gold">Start Your Journey</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ════════ TEAM ════════ -->
+<section id="team">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">Meet the Experts</span>
+    <h2 class="sec-title" style="text-align:center">The <em>Wigs Wonders</em> Family</h2>
+    <div class="sec-divider center"></div>
+    <p style="color:var(--muted);max-width:540px;margin:0 auto;font-size:.88rem;text-align:center">
+      Our passionate team brings artistry, skill, and heartfelt dedication to every single client who walks through our door.
+    </p>
+    <div class="team-grid">
+
+      <!-- Naresh -->
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img src="media/wig_making_1.jpg" alt="Naresh - Founder crafting a wig">
+          <div class="team-role-badge">Founder</div>
+        </div>
+        <div class="team-info">
+          <h3>Naresh</h3>
+          <p>The visionary behind Wigs Wonders. With 12+ years in non-surgical hair replacement, Naresh personally oversees every client's transformation and leads the in-house wig crafting process.</p>
+          <span class="team-exp">12+ Years Experience</span>
+        </div>
+      </div>
+
+      <!-- Raju -->
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img src="media/raju_cofounder.jpg" alt="Raju - Co-Founder, Wigs Wonders">
+          <div class="team-role-badge">Co-Founder</div>
+        </div>
+        <div class="team-info">
+          <h3>Raju</h3>
+          <p>Naresh's brother and co-founder, Raju manages client consultations with extraordinary patience and clarity. He ensures every client fully understands their options before taking a single step.</p>
+          <span class="team-exp">Client Experience Expert</span>
+        </div>
+      </div>
+
+      <!-- Hussain -->
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img src="media/hussain_stylist.jpg" alt="Hussain - Hair Stylist, Wigs Wonders">
+          <div class="team-role-badge">Hair Stylist</div>
+        </div>
+        <div class="team-info">
+          <h3>Hussain</h3>
+          <p>A skilled and meticulous hair stylist, Hussain delivers precision haircuts and styling that blend naturally with every hair replacement system, creating a completely seamless, undetectable result.</p>
+          <span class="team-exp">Precision Styling Specialist</span>
+        </div>
+      </div>
+
+      <!-- Shareef & Team -->
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img src="media/wig_making_2.jpg" alt="Shareef and styling team at Wigs Wonders">
+          <div class="team-role-badge">Styling Team</div>
+        </div>
+        <div class="team-info">
+          <h3>Shareef & Team</h3>
+          <p>Shareef leads our extended styling team — a group of dedicated professionals who bring creativity and technical precision to every haircut, bonding session, and wig fitting.</p>
+          <span class="team-exp">Expert Stylists</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SERVICES ════════ -->
 <section id="services">
-
-<h2 class="title">
-
-Our Services
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<i class="fas fa-user"></i>
-
-<h4>Hair Patch</h4>
-
-<p>
-
-Natural looking premium hair patches.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-cut"></i>
-
-<h4>Hair Systems</h4>
-
-<p>
-
-Premium non surgical hair replacement.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-crown"></i>
-
-<h4>Custom Wigs</h4>
-
-<p>
-
-Professionally manufactured premium wigs.
-
-</p>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">What We Offer</span>
+    <h2 class="sec-title" style="text-align:center">Our <em>Signature</em> Services</h2>
+    <div class="sec-divider center"></div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="s-num">01</div>
+        <h3>Hair Patches</h3>
+        <p>Ultra-thin, skin-safe hair patches crafted from 100% Indian Remy human hair. They blend invisibly with your existing hair — zero surgery, zero downtime, instant results.</p>
+        <span class="s-tag">Most Popular</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-num">02</div>
+        <h3>Hair Systems</h3>
+        <p>Premium full-scalp non-surgical hair replacement systems for complete coverage. Designed for maximum comfort, durability, and a completely natural appearance.</p>
+        <span class="s-tag">Advanced</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-num">03</div>
+        <h3>Men's Custom Wigs</h3>
+        <p>Tailor-made wigs matching your exact hairline, density, colour, and style preference — hand-crafted in-house by Naresh and his team for a truly personalised fit.</p>
+        <span class="s-tag">In-House Crafted</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-num">04</div>
+        <h3>Women's Wigs</h3>
+        <p>Glamorous, full-volume wigs for women — available in straight, wavy, and curly textures. Perfect for everyday confidence or special occasions.</p>
+        <span class="s-tag">Premium</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-num">05</div>
+        <h3>Hair Extensions</h3>
+        <p>Add instant length and volume with clip-in, tape-in, or bond-in extensions using the finest Indian Remy hair. Natural movement. Lasting quality.</p>
+        <span class="s-tag">Instant Results</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-num">06</div>
+        <h3>Hair Bonding &amp; Weaving</h3>
+        <p>Professional bonding and weaving services that keep your hair system secure and natural through gym sessions, swimming, and daily life — with zero compromise.</p>
+        <span class="s-tag">Long-Lasting</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-</body>
+<!-- ════════ STUDIO GALLERY + VIDEO ════════ -->
+<section id="studio">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">Inside Wigs Wonders</span>
+    <h2 class="sec-title" style="text-align:center">Our <em>Studio</em> — Where Magic Happens</h2>
+    <div class="sec-divider center"></div>
 
+    <!-- REAL STUDIO VIDEO -->
+    <div class="studio-video-wrap reveal">
+      <video controls autoplay muted loop playsinline>
+        <source src="media/studio_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-gold-bar">
+        <div>
+          <div class="video-label">Wigs Wonders in Action</div>
+          <div class="video-sub">Real studio footage — Secunderabad, Hyderabad</div>
+        </div>
+        <span style="color:var(--gold);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase">▶ Studio Reel</span>
+      </div>
+    </div>
+
+    <!-- PHOTO GRID -->
+    <div class="studio-grid">
+      <div class="studio-tile wide tall" onclick="openLB('media/cabin_before_after_wall.jpg')">
+        <img src="media/cabin_before_after_wall.jpg" alt="Wigs Wonders studio interior with before & after transformation wall">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Studio Interior — Before &amp; After Wall</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/studio_interior.jpg')">
+        <img src="media/studio_interior.jpg" alt="Inside view of Wigs Wonders studio entrance">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Studio Entrance</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/visiting_card.png')">
+        <img src="media/visiting_card.png" alt="Wigs Wonders studio board at entrance" style="object-position:center">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Studio Signage</span></div>
+      </div>
+      <div class="studio-tile wide" onclick="openLB('media/studio_outside.jpg')">
+        <img src="media/studio_outside.jpg" alt="Wigs Wonders Hair Studio exterior board — Secunderabad">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Studio Exterior — Secunderabad Branch</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/hussain_stylist.jpg')">
+        <img src="media/hussain_stylist.jpg" alt="Hussain, hair stylist at Wigs Wonders, styling a client">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Hussain — Expert Styling Session</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/wig_making_1.jpg')">
+        <img src="media/wig_making_1.jpg" alt="Naresh crafting a wig at Wigs Wonders">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Wig Crafting — In-House Process</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/wig_making_2.jpg')">
+        <img src="media/wig_making_2.jpg" alt="Wig making process at Wigs Wonders studio">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Handcrafted — 100% Human Hair</span></div>
+      </div>
+      <div class="studio-tile" onclick="openLB('media/women_wig.jpg')">
+        <img src="media/women_wig.jpg" alt="Women's long hair wig displayed at Wigs Wonders studio">
+        <div class="studio-tile-overlay"><span class="studio-tile-label">Women's Wig Display</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ HAIR PATCHES SHOWCASE ════════ -->
+<section id="patches">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">Our Stock</span>
+    <h2 class="sec-title" style="text-align:center">Premium <em>Hair Patches</em> — In Stock &amp; Ready</h2>
+    <div class="sec-divider center"></div>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 10px;font-size:.88rem;text-align:center">
+      We maintain a wide range of ready-to-fit hair patches in various textures and densities. Each patch is crafted from 100% Indian Remy human hair for a completely natural appearance.
+    </p>
+    <div class="patches-grid reveal">
+      <div class="patch-card">
+        <img src="media/hair_patches_side.jpg" alt="Hair patches side view — available at Wigs Wonders">
+        <div class="patch-badge">Side View</div>
+        <div class="patch-info">
+          <h4>Skin-Base Hair Patches</h4>
+          <p>Ultra-thin polyurethane base — invisible when worn. Ideal for full coverage on the crown and front hairline.</p>
+        </div>
+      </div>
+      <div class="patch-card">
+        <img src="media/hair_patches_top.jpg" alt="Hair patches top view — available at Wigs Wonders">
+        <div class="patch-badge">Top View</div>
+        <div class="patch-info">
+          <h4>Lace &amp; Mesh Base Patches</h4>
+          <p>Breathable lace and mesh base patches for maximum comfort, especially suited for clients in warmer climates.</p>
+        </div>
+      </div>
+      <div class="patch-card">
+        <img src="media/hair_patches_1.jpg" alt="Full collection of hair patches at Wigs Wonders">
+        <div class="patch-badge">Full Stock</div>
+        <div class="patch-info">
+          <h4>Full Collection — Multiple Textures</h4>
+          <p>Straight, wavy, curly. Black, dark brown, salt &amp; pepper. We match your natural hair precisely for an undetectable result.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ RESULTS / BEFORE-AFTER ════════ -->
+<section id="results">
+  <div class="container">
+    <div class="results-header">
+      <span class="eyebrow">Proof That Works</span>
+      <h2 class="sec-title">Real <em>Transformations</em> — Real People</h2>
+      <div class="sec-divider center"></div>
+      <p style="color:var(--muted);max-width:540px;margin:0 auto;font-size:.88rem">
+        The framed before &amp; after results on our studio wall speak for themselves. Every single transformation was done right here — by Naresh and his team.
+      </p>
+    </div>
+    <div class="results-layout reveal">
+      <div>
+        <div class="before-after-img">
+          <img src="media/cabin_before_after_wall.jpg" alt="Wigs Wonders transformation wall with multiple before & after results">
+        </div>
+        <p style="color:var(--muted);font-size:.75rem;margin-top:12px;font-style:italic;text-align:center">Our actual transformation wall — Secunderabad branch.</p>
+      </div>
+      <div class="results-right">
+        <div class="result-stat-card">
+          <span class="rs-icon">👤</span>
+          <div>
+            <div class="rs-num">500<span style="font-size:1.4rem">+</span></div>
+            <div class="rs-label">Successful transformations completed</div>
+          </div>
+        </div>
+        <div class="result-stat-card">
+          <span class="rs-icon">⏱️</span>
+          <div>
+            <div class="rs-num">1</div>
+            <div class="rs-label">Single session — walk in bald, walk out confident</div>
+          </div>
+        </div>
+        <div class="result-stat-card">
+          <span class="rs-icon">⭐</span>
+          <div>
+            <div class="rs-num">5.0</div>
+            <div class="rs-label">Average client rating across both branches</div>
+          </div>
+        </div>
+        <div class="result-stat-card">
+          <span class="rs-icon">💉</span>
+          <div>
+            <div class="rs-num">0</div>
+            <div class="rs-label">Surgery required — 100% non-invasive</div>
+          </div>
+        </div>
+        <!-- YouTube transformation videos -->
+        <div class="youtube-row">
+          <div class="yt-card">
+            <iframe src="https://www.youtube.com/embed/LDmAGnst2NU" title="Hair patch transformation India" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-label"><p>Hair Patch — India Transformation</p></div>
+          </div>
+          <div class="yt-card">
+            <iframe src="https://www.youtube.com/embed/0Zy0uFxvqzg" title="Before & after hair patch India" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-label"><p>Before &amp; After — Men's Hair Patch</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROCESS ════════ -->
+<section id="process">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">How It Works</span>
+    <h2 class="sec-title" style="text-align:center">Your Journey to <em>Full Hair</em></h2>
+    <div class="sec-divider center"></div>
+    <div class="process-row reveal">
+      <div class="process-step">
+        <div class="ps-circle">1</div>
+        <h4>Free Consultation</h4>
+        <p>Visit us or WhatsApp. Naresh and Raju personally assess your hair loss and explain the best solution for you.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle">2</div>
+        <h4>Custom Measurement</h4>
+        <p>We precisely measure your scalp and select the perfect hair match — colour, density, texture, and base type.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle">3</div>
+        <h4>Fitting &amp; Styling</h4>
+        <p>Your hair system is applied, bonded, and styled in one session by Hussain and our expert styling team.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle">4</div>
+        <h4>Walk Out Confident</h4>
+        <p>Step out looking — and feeling — completely natural. Ongoing maintenance support included, always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BRANCHES ════════ -->
+<section id="branches">
+  <div class="container">
+    <div class="branches-header">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="sec-title">Two <em>Branches</em> Across Hyderabad</h2>
+      <div class="sec-divider center"></div>
+      <p style="color:var(--muted);max-width:520px;margin:0 auto;font-size:.88rem">
+        We now serve clients across Hyderabad with two fully equipped studios. Both branches are personally managed by Naresh and Raju.
+      </p>
+    </div>
+    <div class="branches-grid">
+
+      <!-- Branch 1: Secunderabad -->
+      <div class="branch-card reveal">
+        <div class="branch-img">
+          <img src="media/studio_outside.jpg" alt="Wigs Wonders Hair Studio Secunderabad exterior">
+          <div class="branch-flag">📍 Branch 1 — Main Studio</div>
+        </div>
+        <div class="branch-body">
+          <h3>Secunderabad Branch</h3>
+          <div class="branch-detail">
+            <span>🏠</span>
+            <span>Plot No. 51, House No. 3-14-120, 1st Floor, Piagah Colony, SP Road, Rasool Pura, Secunderabad – 500003, Hyderabad, TS</span>
+          </div>
+          <div class="branch-detail">
+            <span>📞</span>
+            <span><a href="tel:+917396556106" style="color:var(--muted);text-decoration:none">+91-73965-56106</a> &nbsp;|&nbsp; <a href="tel:+917981326252" style="color:var(--muted);text-decoration:none">+91-79813-26252</a></span>
+          </div>
+          <div class="branch-detail">
+            <span>🕐</span>
+            <span>Monday – Saturday: 10:00 AM – 8:00 PM</span>
+          </div>
+          <a href="https://wa.me/917396556106" class="branch-wa">💬 WhatsApp This Branch</a>
+        </div>
+      </div>
+
+      <!-- Branch 2: Kukatpally -->
+      <div class="branch-card reveal">
+        <div class="branch-img">
+          <img src="media/visiting_card.png" alt="Wigs Wonders Hair Studio Kukatpally" style="object-fit:contain;background:#111">
+          <div class="branch-flag">📍 Branch 2 — Kukatpally</div>
+        </div>
+        <div class="branch-body">
+          <h3>Kukatpally Branch</h3>
+          <div class="branch-detail">
+            <span>🏠</span>
+            <span>Near Moosapet Metro Station, Opposite Metro Pillar No. 900, Kukatpally, Hyderabad, Telangana</span>
+          </div>
+          <div class="branch-detail">
+            <span>📞</span>
+            <span><a href="tel:+917396556106" style="color:var(--muted);text-decoration:none">+91-73965-56106</a> &nbsp;|&nbsp; <a href="tel:+917981326252" style="color:var(--muted);text-decoration:none">+91-79813-26252</a></span>
+          </div>
+          <div class="branch-detail">
+            <span>🕐</span>
+            <span>Monday – Saturday: 10:00 AM – 8:00 PM</span>
+          </div>
+          <a href="https://wa.me/917396556106" class="branch-wa">💬 WhatsApp This Branch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ REVIEWS ════════ -->
+<section id="reviews">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">Client Love</span>
+    <h2 class="sec-title" style="text-align:center">What Our <em>Clients</em> Say</h2>
+    <div class="sec-divider center"></div>
+    <div class="reviews-grid">
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>Naresh is an absolute genius. I walked in with a receding hairline and walked out looking 10 years younger. Not even my wife could tell it was a hair patch — that is how natural it looks.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">R</div>
+          <div>
+            <div class="r-name">Ravi Kumar</div>
+            <div class="r-loc">Software Engineer, HITEC City</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>Raju explained everything so patiently before I made my decision. The whole team made me feel genuinely comfortable. The result is completely undetectable. Best decision I have ever made.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">S</div>
+          <div>
+            <div class="r-name">Srinivas Reddy</div>
+            <div class="r-loc">Business Owner, Jubilee Hills</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>As a woman dealing with hair thinning, this studio gave me my confidence back completely. The wig they fitted feels and looks entirely real. I highly recommend Wigs Wonders to every woman.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">P</div>
+          <div>
+            <div class="r-name">Priya Nair</div>
+            <div class="r-loc">Teacher, Secunderabad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>Affordable, professional, and results that look completely natural. Hussain's styling skills are exceptional — the final cut blended so perfectly that even I had to do a double take. 10/10.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">A</div>
+          <div>
+            <div class="r-name">Arjun Mehta</div>
+            <div class="r-loc">Marketing Manager, Gachibowli</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>I tried two other studios before finding Wigs Wonders. The quality difference is massive. My hair patch has lasted eight months and still looks incredible. Every rupee was worth it.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">V</div>
+          <div>
+            <div class="r-name">Venkat Rao</div>
+            <div class="r-loc">Chartered Accountant, Banjara Hills</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote"><p>The bonding is so secure I swim, go to the gym, and travel with zero worries. The Kukatpally branch is super convenient for me. Naresh and Raju are brothers who truly care — it shows.</p></div>
+        <div class="reviewer">
+          <div class="r-avatar">K</div>
+          <div>
+            <div class="r-name">Kiran Sharma</div>
+            <div class="r-loc">Fitness Trainer, Kukatpally</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2>Ready for Your<br><em>Transformation?</em></h2>
+        <p>Book a free, no-obligation consultation today. Walk in to either branch or simply WhatsApp us — Naresh or Raju will personally guide you through every option.</p>
+
+        <div class="c-detail">
+          <span class="c-icon">📍</span>
+          <div>
+            <div class="c-lbl">Main Studio — Secunderabad</div>
+            <div class="c-val">Plot No. 51, 1st Floor, Piagah Colony, SP Road, Rasool Pura, Secunderabad – 500003</div>
+          </div>
+        </div>
+        <div class="c-detail">
+          <span class="c-icon">📍</span>
+          <div>
+            <div class="c-lbl">Branch 2 — Kukatpally</div>
+            <div class="c-val">Near Moosapet Metro Station, Opp. Metro Pillar No. 900, Kukatpally, Hyderabad</div>
+          </div>
+        </div>
+        <div class="c-detail">
+          <span class="c-icon">📞</span>
+          <div>
+            <div class="c-lbl">Phone / WhatsApp</div>
+            <div class="c-val">
+              <a href="tel:+917396556106">+91-73965-56106</a><br>
+              <a href="tel:+917981326252">+91-79813-26252</a>
+            </div>
+          </div>
+        </div>
+        <div class="c-detail">
+          <span class="c-icon">✉️</span>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:info@wigswonders.in">info@wigswonders.in</a></div>
+          </div>
+        </div>
+        <div class="c-detail">
+          <span class="c-icon">🕐</span>
+          <div>
+            <div class="c-lbl">Studio Hours</div>
+            <div class="c-val">Monday – Saturday: 10:00 AM – 8:00 PM</div>
+          </div>
+        </div>
+        <a href="https://wa.me/917396556106" class="btn-gold" style="margin-top:16px;display:inline-flex;align-items:center;gap:8px">
+          💬 Book on WhatsApp — It's Free
+        </a>
+      </div>
+
+      <div class="contact-form-box reveal">
+        <h3>Send Us a Message</h3>
+        <div class="fg">
+          <label>Your Name</label>
+          <input type="text" id="cf-name" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="fg">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 __ __ __ __ __">
+        </div>
+        <div class="fg">
+          <label>Preferred Branch</label>
+          <select>
+            <option value="">Select a branch...</option>
+            <option>Secunderabad (Main Studio)</option>
+            <option>Kukatpally Branch</option>
+            <option>No preference — either works</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Service Interested In</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Hair Patch for Men</option>
+            <option>Full Hair System</option>
+            <option>Men's Custom Wig</option>
+            <option>Women's Wig</option>
+            <option>Hair Extensions</option>
+            <option>Hair Bonding / Weaving</option>
+            <option>Not sure — need consultation</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Message (Optional)</label>
+          <textarea placeholder="Tell us about your hair concern..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitForm(this)">Send Message ✦</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="f-logo">Wigs Wonders Hair Studio</div>
+      <ul class="f-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#branches">Branches</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/917396556106" class="btn-gold" style="font-size:.74rem;padding:10px 20px">WhatsApp Now</a>
+    </div>
+    <p class="f-copy">© 2025 Wigs Wonders Hair Studio. Secunderabad &amp; Kukatpally, Hyderabad, Telangana. All Rights Reserved.<br>
+    Non-Surgical Hair Replacement · Hair Patches · Hair Wigs · Hair Extensions · Hair Bonding &amp; Weaving</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/917396556106" class="wa-float">💬 WhatsApp Us</a>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+// REVEAL ON SCROLL
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), i * 90); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// LIGHTBOX
+function openLB(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLB() { document.getElementById('lightbox').classList.remove('open'); }
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLB(); });
+
+// CONTACT FORM
+function submitForm(btn) {
+  const name = document.getElementById('cf-name').value.trim();
+  if (!name) { alert('Please enter your name to continue.'); return; }
+  btn.textContent = '✓ Message Sent! We will reach out shortly.';
+  btn.style.background = '#4caf50'; btn.disabled = true;
+}
+</script>
+</body>
 </html>
